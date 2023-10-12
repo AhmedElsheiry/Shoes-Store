@@ -59,7 +59,7 @@ a {
 /* Large */
 @media (min-width: 1200px) {
   .container {
-    width: 1170px;
+    width: calc(100% - 300px);
   }
 }
 /* start header */
@@ -117,9 +117,9 @@ header .container .icons i:hover {
   header {
     height: 107px;
   }
-  .container {
+  /* .container {
     padding: 0;
-  }
+  } */
   header .container {
     flex-direction: column;
   }
@@ -275,8 +275,13 @@ header .container .icons i:hover {
 }
 .Products .container .boxes-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 40px;
+}
+@media screen and (max-width: 767px) {
+  .Products .container .boxes-container {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
 }
 .Products .container .boxes-container .box {
   text-align: center;
@@ -376,7 +381,7 @@ h1.special span {
 }
 .about .container {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
 }
 .about .container .photos {
@@ -450,6 +455,7 @@ h1.special span {
   }
   .about .container .photos {
     margin: 0 10px 30px;
+    justify-content: center;
   }
   .about button {
     left: 50%;
@@ -468,7 +474,7 @@ h1.special span {
 }
 .review .container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   gap: 25px;
 }
 .review .container .customer {
@@ -489,8 +495,6 @@ h1.special span {
   margin-right: 15px;
   box-shadow: 0 0 8px 2px #ccc;
 }
-.review .container .customer .info .name {
-}
 .review .container .customer .info .name h2 {
   font-size: 20px;
   text-transform: capitalize;
@@ -510,14 +514,19 @@ h1.special span {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   }
 }
+@media screen and (max-width: 991px) {
+  .review .container {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+}
 /* end review */
 /* start services */
 .services {
   padding: 50px 0;
 }
 .services .container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  display: flex;
+  justify-content: space-evenly;
   gap: 20px;
 }
 .services .container .box {
@@ -538,6 +547,11 @@ h1.special span {
   font-size: 16px;
   color: #777;
   line-height: 1.3;
+}
+@media screen and (max-width: 767px) {
+  .services .container {
+    flex-direction: column;
+  }
 }
 /* end services */
 /* start login */
@@ -655,7 +669,7 @@ footer {
 }
 footer .footer-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(235px, 1fr));
   gap: 30px;
 }
 footer .footer-container .box h1 {
